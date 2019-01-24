@@ -10,7 +10,11 @@ import UIKit
 
 class AllListsTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
+  @IBAction func addListButton(_ sender: Any) {
+      print("I'D BETTER NOT FUCK THIS UP")
+  }
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations

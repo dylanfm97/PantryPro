@@ -14,6 +14,7 @@
 		D9E855B821F93D4E002C2C30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9E855B621F93D4E002C2C30 /* LaunchScreen.storyboard */; };
 		D9E855C321F93D4E002C2C30 /* PantryProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855C221F93D4E002C2C30 /* PantryProTests.swift */; };
 		D9E855CE21F93D4E002C2C30 /* PantryProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855CD21F93D4E002C2C30 /* PantryProUITests.swift */; };
+		D9E855DC21F93E3F002C2C30 /* AllListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855DB21F93E3F002C2C30 /* AllListsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D9E855C921F93D4E002C2C30 /* PantryProUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantryProUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E855CD21F93D4E002C2C30 /* PantryProUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryProUITests.swift; sourceTree = "<group>"; };
 		D9E855CF21F93D4E002C2C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9E855DB21F93E3F002C2C30 /* AllListsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D9E855B421F93D4E002C2C30 /* Assets.xcassets */,
 				D9E855B621F93D4E002C2C30 /* LaunchScreen.storyboard */,
 				D9E855B921F93D4E002C2C30 /* Info.plist */,
+				D9E855DB21F93E3F002C2C30 /* AllListsTableViewController.swift */,
 			);
 			path = PantryPro;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9E855B021F93D48002C2C30 /* ViewController.swift in Sources */,
+				D9E855DC21F93E3F002C2C30 /* AllListsTableViewController.swift in Sources */,
 				D9E855AE21F93D47002C2C30 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

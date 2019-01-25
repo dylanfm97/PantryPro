@@ -18,6 +18,9 @@
 		D9E855E021F94A18002C2C30 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855DF21F94A18002C2C30 /* List.swift */; };
 		D9E855E221F94AE3002C2C30 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855E121F94AE3002C2C30 /* ListItem.swift */; };
 		D9E855E421F951CB002C2C30 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855E321F951CB002C2C30 /* ListCell.swift */; };
+		D9E855E621FA40CD002C2C30 /* listStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855E521FA40CD002C2C30 /* listStore.swift */; };
+		D9E855E821FA922C002C2C30 /* IndividualListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855E721FA922C002C2C30 /* IndividualListViewController.swift */; };
+		D9E855EA21FA9551002C2C30 /* ListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855E921FA9551002C2C30 /* ListItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		D9E855DF21F94A18002C2C30 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		D9E855E121F94AE3002C2C30 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		D9E855E321F951CB002C2C30 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		D9E855E521FA40CD002C2C30 /* listStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listStore.swift; sourceTree = "<group>"; };
+		D9E855E721FA922C002C2C30 /* IndividualListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualListViewController.swift; sourceTree = "<group>"; };
+		D9E855E921FA9551002C2C30 /* ListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 				D9E855DF21F94A18002C2C30 /* List.swift */,
 				D9E855E121F94AE3002C2C30 /* ListItem.swift */,
 				D9E855E321F951CB002C2C30 /* ListCell.swift */,
+				D9E855E521FA40CD002C2C30 /* listStore.swift */,
+				D9E855E721FA922C002C2C30 /* IndividualListViewController.swift */,
+				D9E855E921FA9551002C2C30 /* ListItemCell.swift */,
 			);
 			path = PantryPro;
 			sourceTree = "<group>";
@@ -273,7 +282,10 @@
 				D9E855E021F94A18002C2C30 /* List.swift in Sources */,
 				D9E855E421F951CB002C2C30 /* ListCell.swift in Sources */,
 				D9E855AE21F93D47002C2C30 /* AppDelegate.swift in Sources */,
+				D9E855E821FA922C002C2C30 /* IndividualListViewController.swift in Sources */,
+				D9E855E621FA40CD002C2C30 /* listStore.swift in Sources */,
 				D9E855DE21F944FD002C2C30 /* ListViewController.swift in Sources */,
+				D9E855EA21FA9551002C2C30 /* ListItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

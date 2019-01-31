@@ -19,15 +19,14 @@ class ListItem: NSObject, NSCoding {
   }
   
   func encode(with aCoder: NSCoder) {
-    
+    aCoder.encode(self.quantity, forKey: "quantity")
+    aCoder.encode(self.item, forKey: "item")
   }
   
   required init?(coder aDecoder: NSCoder) {
-    self.quantity = aDecoder.decodeObject(forKey: "artist") as! Int
-    self.item = aDecoder.decodeObject(forKey: "title") as! String
+    self.quantity = aDecoder.decodeInteger(forKey: "quantity")
+    self.item = aDecoder.decodeObject(forKey: "item") as! String
+    super.init()
   }
-  
-  
-  
-  
+
 }

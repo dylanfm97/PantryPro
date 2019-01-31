@@ -19,8 +19,7 @@ class ListStore {
   }()
   
   init(){
-    if let archivedLists =
-      NSKeyedUnarchiver.unarchiveObject(withFile: listArchiveURL.path) as? [List] {
+    if let archivedLists = NSKeyedUnarchiver.unarchiveObject(withFile: listArchiveURL.path) as? [List] {
       allLists = archivedLists
     }
   }

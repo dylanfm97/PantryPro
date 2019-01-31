@@ -11,7 +11,7 @@ import Foundation
 
 class List: NSObject, NSCoding {
   
-  var name: String
+  var name: String?
   var items = [ListItem]()
   
   init(name: String){
@@ -28,14 +28,20 @@ class List: NSObject, NSCoding {
     self.items.append(item)
   }
   
-  func encode(with aCoder: NSCoder) {
-    aCoder.encode(self.name, forKey: "artist")
-    aCoder.encode(self.items, forKey: "title")
+  func removeItem(item: ListItem){
+    if let index = self.items.index(of: item){
+      self.items.remove(at: index)
+    }
   }
   
+  func encode(with aCoder: NSCoder) {
+    aCoder.encode(self.name, forKey: "name")
+    aCoder.encode(self.items, forKey: "items")
+  }
+
   required init?(coder aDecoder: NSCoder) {
-    self.name = aDecoder.decodeObject(forKey: "artist") as! String
-    self.items = aDecoder.decodeObject(forKey: "title") as! [ListItem]
+    self.name = aDecoder.decodeObject(forKey: "name") as! String?
+    self.items = aDecoder.decodeObject(forKey: "items") as! [ListItem]
     super.init()
   }
 }

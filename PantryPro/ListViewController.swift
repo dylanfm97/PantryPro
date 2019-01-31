@@ -16,12 +16,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   @IBAction func newListOnClick(_ sender: Any) {
     let alertController = UIAlertController(title: "New List", message: "enter the name of your list", preferredStyle: .alert)
-    alertController.addTextField { (textField : UITextField!) -> Void in
+    alertController.addTextField {
+      (textField : UITextField!) -> Void in
       textField.placeholder = "New List"
     }
-    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in
-      
-    }
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (UIAlertAction) in}
     let create = UIAlertAction(title: "Create", style: .default) { (UIAlertAction) in
       let nameField = alertController.textFields![0] as UITextField
       let newList = List(name: nameField.text ?? "")
@@ -31,10 +30,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     alertController.addAction(cancel)
     alertController.addAction(create)
-
     self.present(alertController, animated: true, completion: nil)
   }
   
+ 
   @IBAction func editButtonOnClick(_ sender: Any) {
     if(self.tableView.isEditing == true)
     {
@@ -54,8 +53,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     self.tableView.dataSource = self
     self.editButton.title = "Edit"
     
-    let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
-    self.navigationItem.rightBarButtonItem = rightButton// Do any additional setup after loading the view.
+//    let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
+   // self.navigationItem.rightBarButtonItem = // Do any additional setup after loading the view.
+    navigationItem.leftBarButtonItem = editButtonItem
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,13 +86,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                  message: message,
                                  preferredStyle: .actionSheet)
       
-      
-      
       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
       ac.addAction(cancelAction)
       let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
                                        handler: { (action) -> Void in
-                                        
                                         self.listStore.removeList(thisList)
                                         tableView.deleteRows(at: [indexPath], with: .automatic)
       })

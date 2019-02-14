@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D96ED7D6220E304700F46852 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96ED7D5220E304700F46852 /* Recipe.swift */; };
+		D96ED7D8220E32AF00F46852 /* RecipeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96ED7D7220E32AF00F46852 /* RecipeStore.swift */; };
+		D96ED7DA220F824E00F46852 /* IndividualRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96ED7D9220F824E00F46852 /* IndividualRecipeViewController.swift */; };
+		D96ED7E0220FC39900F46852 /* RecipeCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96ED7DF220FC39900F46852 /* RecipeCells.swift */; };
+		D97DCF5422090A5C0095CF06 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DCF5322090A5C0095CF06 /* RecipeViewController.swift */; };
+		D97DCF5622090BB10095CF06 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DCF5522090BB10095CF06 /* RecipeCell.swift */; };
+		D97DCF5822090F500095CF06 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DCF5722090F500095CF06 /* HomeTabBarController.swift */; };
+		D97FC100221393FB006B3DBF /* PresentCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FC0FF221393FB006B3DBF /* PresentCameraViewController.swift */; };
+		D97FC10222139F32006B3DBF /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FC10122139F32006B3DBF /* CameraController.swift */; };
 		D9E79D34220154A5004DE7F4 /* ItemPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79D33220154A5004DE7F4 /* ItemPopUpViewController.swift */; };
 		D9E855AE21F93D47002C2C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855AD21F93D47002C2C30 /* AppDelegate.swift */; };
 		D9E855B021F93D48002C2C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E855AF21F93D48002C2C30 /* ViewController.swift */; };
@@ -42,6 +51,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D96ED7D5220E304700F46852 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D96ED7D7220E32AF00F46852 /* RecipeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeStore.swift; sourceTree = "<group>"; };
+		D96ED7D9220F824E00F46852 /* IndividualRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualRecipeViewController.swift; sourceTree = "<group>"; };
+		D96ED7DF220FC39900F46852 /* RecipeCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCells.swift; sourceTree = "<group>"; };
+		D97DCF5322090A5C0095CF06 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		D97DCF5522090BB10095CF06 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		D97DCF5722090F500095CF06 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		D97FC0FF221393FB006B3DBF /* PresentCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentCameraViewController.swift; sourceTree = "<group>"; };
+		D97FC10122139F32006B3DBF /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		D9E79D33220154A5004DE7F4 /* ItemPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPopUpViewController.swift; sourceTree = "<group>"; };
 		D9E855AA21F93D47002C2C30 /* PantryPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E855AD21F93D47002C2C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +108,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D96ED7D3220E2EAC00F46852 /* ListTab */ = {
+			isa = PBXGroup;
+			children = (
+				D9E79D33220154A5004DE7F4 /* ItemPopUpViewController.swift */,
+				D9E855E921FA9551002C2C30 /* ListItemCell.swift */,
+				D9E855E721FA922C002C2C30 /* IndividualListViewController.swift */,
+				D9E855E521FA40CD002C2C30 /* listStore.swift */,
+				D9E855E321F951CB002C2C30 /* ListCell.swift */,
+				D9E855E121F94AE3002C2C30 /* ListItem.swift */,
+				D9E855DF21F94A18002C2C30 /* List.swift */,
+				D9E855DD21F944FD002C2C30 /* ListViewController.swift */,
+			);
+			path = ListTab;
+			sourceTree = "<group>";
+		};
+		D96ED7D4220E2F1300F46852 /* RecipeTab */ = {
+			isa = PBXGroup;
+			children = (
+				D97DCF5322090A5C0095CF06 /* RecipeViewController.swift */,
+				D97DCF5522090BB10095CF06 /* RecipeCell.swift */,
+				D96ED7D5220E304700F46852 /* Recipe.swift */,
+				D96ED7D7220E32AF00F46852 /* RecipeStore.swift */,
+				D96ED7D9220F824E00F46852 /* IndividualRecipeViewController.swift */,
+				D96ED7DF220FC39900F46852 /* RecipeCells.swift */,
+			);
+			path = RecipeTab;
+			sourceTree = "<group>";
+		};
+		D97FC0FE221393D4006B3DBF /* CameraTab */ = {
+			isa = PBXGroup;
+			children = (
+				D97FC0FF221393FB006B3DBF /* PresentCameraViewController.swift */,
+				D97FC10122139F32006B3DBF /* CameraController.swift */,
+			);
+			path = CameraTab;
+			sourceTree = "<group>";
+		};
 		D9E855A121F93D47002C2C30 = {
 			isa = PBXGroup;
 			children = (
@@ -113,20 +168,16 @@
 		D9E855AC21F93D47002C2C30 /* PantryPro */ = {
 			isa = PBXGroup;
 			children = (
+				D97FC0FE221393D4006B3DBF /* CameraTab */,
+				D96ED7D4220E2F1300F46852 /* RecipeTab */,
+				D96ED7D3220E2EAC00F46852 /* ListTab */,
 				D9E855AD21F93D47002C2C30 /* AppDelegate.swift */,
+				D97DCF5722090F500095CF06 /* HomeTabBarController.swift */,
 				D9E855AF21F93D48002C2C30 /* ViewController.swift */,
 				D9E855B121F93D48002C2C30 /* Main.storyboard */,
 				D9E855B421F93D4E002C2C30 /* Assets.xcassets */,
 				D9E855B621F93D4E002C2C30 /* LaunchScreen.storyboard */,
 				D9E855B921F93D4E002C2C30 /* Info.plist */,
-				D9E855DD21F944FD002C2C30 /* ListViewController.swift */,
-				D9E855DF21F94A18002C2C30 /* List.swift */,
-				D9E855E121F94AE3002C2C30 /* ListItem.swift */,
-				D9E855E321F951CB002C2C30 /* ListCell.swift */,
-				D9E855E521FA40CD002C2C30 /* listStore.swift */,
-				D9E855E721FA922C002C2C30 /* IndividualListViewController.swift */,
-				D9E855E921FA9551002C2C30 /* ListItemCell.swift */,
-				D9E79D33220154A5004DE7F4 /* ItemPopUpViewController.swift */,
 			);
 			path = PantryPro;
 			sourceTree = "<group>";
@@ -283,13 +334,22 @@
 				D9E855E221F94AE3002C2C30 /* ListItem.swift in Sources */,
 				D9E855B021F93D48002C2C30 /* ViewController.swift in Sources */,
 				D9E79D34220154A5004DE7F4 /* ItemPopUpViewController.swift in Sources */,
+				D97DCF5622090BB10095CF06 /* RecipeCell.swift in Sources */,
+				D97DCF5822090F500095CF06 /* HomeTabBarController.swift in Sources */,
 				D9E855E021F94A18002C2C30 /* List.swift in Sources */,
 				D9E855E421F951CB002C2C30 /* ListCell.swift in Sources */,
+				D97DCF5422090A5C0095CF06 /* RecipeViewController.swift in Sources */,
 				D9E855AE21F93D47002C2C30 /* AppDelegate.swift in Sources */,
+				D96ED7D6220E304700F46852 /* Recipe.swift in Sources */,
 				D9E855E821FA922C002C2C30 /* IndividualListViewController.swift in Sources */,
 				D9E855E621FA40CD002C2C30 /* listStore.swift in Sources */,
 				D9E855DE21F944FD002C2C30 /* ListViewController.swift in Sources */,
+				D97FC100221393FB006B3DBF /* PresentCameraViewController.swift in Sources */,
 				D9E855EA21FA9551002C2C30 /* ListItemCell.swift in Sources */,
+				D96ED7D8220E32AF00F46852 /* RecipeStore.swift in Sources */,
+				D97FC10222139F32006B3DBF /* CameraController.swift in Sources */,
+				D96ED7DA220F824E00F46852 /* IndividualRecipeViewController.swift in Sources */,
+				D96ED7E0220FC39900F46852 /* RecipeCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,30 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
   @IBOutlet var tableView: UITableView!
   @IBOutlet var editButton: UIBarButtonItem!
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+    self.editButton.title = "Edit"
+    
+//    let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
+   // self.navigationItem.rightBarButtonItem = // Do any additional setup after loading the view.
+    navigationItem.leftBarButtonItem = editButtonItem
+  }
+  
+  @IBAction func editButtonOnClick(_ sender: Any) {
+    if(self.tableView.isEditing == true)
+    {
+      self.tableView.isEditing = false
+      self.editButton.title = "Edit"
+    }
+    else
+    {
+      self.tableView.isEditing = true
+      self.editButton.title = "Done"
+    }
+  }
+  
   @IBAction func newListOnClick(_ sender: Any) {
     let alertController = UIAlertController(title: "New List", message: "enter the name of your list", preferredStyle: .alert)
     alertController.addTextField {
@@ -31,31 +55,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     alertController.addAction(cancel)
     alertController.addAction(create)
     self.present(alertController, animated: true, completion: nil)
-  }
-  
- 
-  @IBAction func editButtonOnClick(_ sender: Any) {
-    if(self.tableView.isEditing == true)
-    {
-      self.tableView.isEditing = false
-      self.editButton.title = "Edit"
-    }
-    else
-    {
-      self.tableView.isEditing = true
-      self.editButton.title = "Done"
-    }
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    self.tableView.delegate = self
-    self.tableView.dataSource = self
-    self.editButton.title = "Edit"
-    
-//    let rightButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("showEditing:")))
-   // self.navigationItem.rightBarButtonItem = // Do any additional setup after loading the view.
-    navigationItem.leftBarButtonItem = editButtonItem
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,14 +112,5 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
       }
     }
   }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -16,17 +16,7 @@ class IndividualListViewController: UIViewController, UITableViewDelegate, UITab
 
   @IBOutlet var tableView: UITableView!
 
-  @IBAction func addItemOnClick(_ sender: Any) {
-    let newListItem = ListItem(quantity: 1, item: "")
-    self.list.addItem(item: newListItem)
-    self.tableView.reloadData()
-    
-    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = storyboard.instantiateViewController(withIdentifier: "ListItemPopUp") as! ItemPopUpViewController
-    vc.listItem = self.list.items[self.list.items.count-1]
-    vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-    present(vc, animated: true, completion:nil)
-  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.tableView.delegate = self
@@ -64,6 +54,19 @@ class IndividualListViewController: UIViewController, UITableViewDelegate, UITab
     return cell
   }
 
+  //button click handlers ------------ //
+  @IBAction func addItemOnClick(_ sender: Any) {
+    let newListItem = ListItem(quantity: 1, item: "")
+    self.list.addItem(item: newListItem)
+    self.tableView.reloadData()
+    
+    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewController(withIdentifier: "ListItemPopUp") as! ItemPopUpViewController
+    vc.listItem = self.list.items[self.list.items.count-1]
+    vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+    present(vc, animated: true, completion:nil)
+  }
+  
   @IBAction func editButtonOnClick(_ sender: Any) {
     if(self.tableView.isEditing == true)
     {
@@ -76,6 +79,7 @@ class IndividualListViewController: UIViewController, UITableViewDelegate, UITab
       self.editButton.title = "Done"
     }
   }
+  //---------------//
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
@@ -138,14 +142,5 @@ class IndividualListViewController: UIViewController, UITableViewDelegate, UITab
       }
     }
   }
-  /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

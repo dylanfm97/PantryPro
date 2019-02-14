@@ -9,7 +9,7 @@
 import AVFoundation
 import UIKit
 
-class CameraController {
+class CameraController: NSObject, AVCapturePhotoCaptureDelegate {
   
   enum CameraControllerError: Swift.Error {
     case captureSessionAlreadyRunning
@@ -36,6 +36,8 @@ class CameraController {
   
   var previewLayer: AVCaptureVideoPreviewLayer?
   
+  var photoCaptureCompletionBlock: ((UIImage?, Error?) -> Void)?
+  
   func prepare(completionHandler: @escaping (Error?) -> Void) {
     func createCaptureSession() {
       self.captureSession = AVCaptureSession()
@@ -45,7 +47,7 @@ class CameraController {
       let session = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .unspecified)
       let cameras = session.devices.compactMap { $0 }
 
-      //2
+      //2 detect all the available cameras
       for camera in cameras {
         if camera.position == .front {
           self.frontCamera = camera
@@ -64,7 +66,7 @@ class CameraController {
       //3
       guard let captureSession = self.captureSession else { throw CameraControllerError.captureSessionIsMissing }
       
-      //4
+      //4 
       if let rearCamera = self.rearCamera {
         self.rearCameraInput = try AVCaptureDeviceInput(device: rearCamera)
         
@@ -128,7 +130,32 @@ class CameraController {
     view.layer.insertSublayer(self.previewLayer!, at: 0)
     self.previewLayer?.frame = view.frame
   }
+  
+  func captureImage(completion: @escaping (UIImage?, Error?) -> Void) {
+    guard let captureSession = captureSession, captureSession.isRunning else { completion(nil, CameraControllerError.captureSessionIsMissing); return }
+    
+    let settings = AVCapturePhotoSettings()
+   // settings.flashMode = self.flashMode
+    
+    self.photoOutput?.capturePhoto(with: settings, delegate: self)
+    self.photoCaptureCompletionBlock = completion
+  }
 
+  
+  public func photoOutput(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+                      resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Swift.Error?) {
+    if let error = error { self.photoCaptureCompletionBlock?(nil, error) }
+      
+    else if let buffer = photoSampleBuffer, let data = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: buffer, previewPhotoSampleBuffer: nil),
+      let image = UIImage(data: data) {
+      
+      self.photoCaptureCompletionBlock?(image, nil)
+    }
+      
+    else {
+      self.photoCaptureCompletionBlock?(nil, CameraControllerError.unknown)
+    }
+  }
   
 
 }
